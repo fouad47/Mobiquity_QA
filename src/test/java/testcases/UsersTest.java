@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import service.child.User;
 
+import static org.apache.http.HttpStatus.SC_NO_CONTENT;
 import static org.apache.http.HttpStatus.SC_OK;
 
 
@@ -28,7 +29,14 @@ public class UsersTest {
         Assert.assertEquals(
                 response.statusCode(), SC_OK, "Invalid Status Code");
         Assert.assertNotNull(UserHelper.getUserId(user), "User Id is Null");
+    }
 
+    @Test(description = "User Negative Test: Verify user search by invalid username")
+    public void testSearchUserByIncorrectName(){
+        Response response = userService.getUserByUserName(UserControllerConstants.INCORRECT_USER_NAME);
+        Assert.assertTrue(response.getBody().print().contentEquals("[]"), "No body returned");
+        Assert.assertEquals(
+                response.statusCode(), SC_NO_CONTENT, "Invalid Status Code");
     }
 
 
