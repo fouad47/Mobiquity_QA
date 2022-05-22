@@ -20,7 +20,7 @@ public class Post extends ResponseService {
 
     private Map<String, String> getQueryParams(String id) {
 
-        HashMap<String, String> queryParams = new HashMap<>();
+        Map<String, String> queryParams = new HashMap<>();
         queryParams.put("userId", id);
         return queryParams;
 

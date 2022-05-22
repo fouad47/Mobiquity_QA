@@ -16,9 +16,9 @@ public class User extends ResponseService {
         return get(UserBase.USER, getQueryParams(name));
     }
 
-    private Map<String, String> getQueryParams(String name) {
+    private static Map<String, String> getQueryParams(String name) {
 
-        HashMap<String, String> queryParams = new HashMap<>();
+        Map<String, String> queryParams = new HashMap<>();
         queryParams.put("username", name);
         return queryParams;
 

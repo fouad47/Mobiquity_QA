@@ -2,12 +2,13 @@ package common;
 
 import constants.Endpoint;
 
-public enum PostBase implements Base {
-    POST(Endpoint.GET_POSTS);
+public enum CommentBase implements Base {
+
+    COMMENTS(Endpoint.GET_COMMENTS);
 
     private final String basePath;
 
-    PostBase(String basePath){
+    CommentBase(String basePath){
         this.basePath = basePath;
     }
 
@@ -15,4 +16,5 @@ public enum PostBase implements Base {
     public String path() {
         return basePath;
     }
+
 }
