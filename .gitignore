@@ -14,7 +14,7 @@
 # Ignore target folder
 target/
 
-.ciecleci/
+.circleci/
 
 # Package Files #
 *.jar
